@@ -47,6 +47,17 @@ public class Session {
         }
     }
 
+    public User getRandomUser() {
+        if (this.users == null || this.users.isEmpty()) {
+            throw new IllegalArgumentException("The list is null or empty.");
+        }
+        
+        Random random = new Random();
+        int randomIndex = random.nextInt(this.users.size());
+
+        return this.users.get(randomIndex);
+    }
+
     public void buyRound(User user, Beverage beverage) {
         int amount = beverage.getPrice();
         int drinks = users.size();
@@ -59,7 +70,6 @@ public class Session {
         int drinks = users.size();
         userToBuyRound.setBalance(drinks*amount);
     }
-
 
     public User suggestNextUser() {
         User nextUser = users.get(0);
