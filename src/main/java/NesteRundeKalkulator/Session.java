@@ -53,7 +53,15 @@ public class Session {
         user.setBalance(drinks*amount);
     }
 
-    public String suggestNextUser() {
+    public void nextUserBuyRound(Beverage beverage) {
+        User userToBuyRound = suggestNextUser();
+        int amount = beverage.getPrice();
+        int drinks = users.size();
+        userToBuyRound.setBalance(drinks*amount);
+    }
+
+
+    public User suggestNextUser() {
         User nextUser = users.get(0);
         for (User prevUser : users) {
             if (prevUser.getBalance() < nextUser.getBalance()) {
@@ -71,7 +79,9 @@ public class Session {
             }
         }
         
-        return nextUser.getName()+" må kjøpe runde, vedkommende har kun brukt " + nextUser.getBalance() + " kr i kveld.";
+        System.out.println(nextUser.getName()+" må kjøpe runde, vedkommende har kun brukt " + nextUser.getBalance() + " kr i kveld.");
+
+        return nextUser;
     }
 
 }
