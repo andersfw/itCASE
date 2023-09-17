@@ -57,7 +57,7 @@ public class Session {
 
         return this.users.get(randomIndex);
     }
-
+    
     public void buyRound(User user, Beverage beverage) {
         int amount = beverage.getPrice();
         int drinks = users.size();
