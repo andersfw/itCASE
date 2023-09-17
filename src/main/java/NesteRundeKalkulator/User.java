@@ -5,9 +5,8 @@ public class User {
     private String name;
     private int balance;
     
-    public User(String name, int balance) {
+    public User(String name) {
         this.name = name;
-        this.balance = balance;
     }
 
     public String getName() {
@@ -23,7 +22,12 @@ public class User {
     }
 
     public void setBalance(int balance) {
-        this.balance = balance;
+        this.balance += balance;
+    }
+
+    @Override
+    public String toString() {
+        return "User [name=" + name + ", balance=" + balance + "]";
     }
 
     
