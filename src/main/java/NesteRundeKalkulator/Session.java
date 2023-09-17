@@ -10,6 +10,7 @@ public class Session {
     private String name;
 
     public Session(String name) {
+        checkSessionName(name);
         this.name = name;
     }
 
@@ -34,9 +35,15 @@ public class Session {
         if (!users.isEmpty()) {
             for (User user : users) {
                 if (user.getName().equals(name)) {
-                    throw new IllegalArgumentException();
+                    throw new IllegalArgumentException("Ugyldig navn!");
                 }
             }
+        }
+    }
+
+    private void checkSessionName(String name) {
+        if (name.contains("")) {
+            throw new IllegalArgumentException("Ugyldig navn");
         }
     }
 
