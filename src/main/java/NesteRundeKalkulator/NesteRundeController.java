@@ -20,7 +20,7 @@ public class NesteRundeController {
 
     Session session;
     
-    @FXML Button newSessionButton, addUserButton, finishedButton;
+    @FXML Button newSessionButton, addUserButton, finishedButton, initialRound;
     @FXML TextField sessionName, addUser;
     @FXML Label finishedLabel;
 
@@ -43,9 +43,18 @@ public class NesteRundeController {
         String name = addUser.getText();
         User user = new User(name);
         session.addUser(user);
+        addUser.clear();
     }
 
     public void handleFinished() {
+        addUserButton.setVisible(false);
+        addUser.setVisible(false);
+        finishedButton.setVisible(false);
+        finishedLabel.setVisible(false);
+        initialRound.setVisible(true);
+    }
+
+    public void handleInitialRound() {
         
     }
 
