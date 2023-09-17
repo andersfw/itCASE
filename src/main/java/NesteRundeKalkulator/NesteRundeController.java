@@ -26,8 +26,8 @@ public class NesteRundeController {
 
     Session session;
     
-    @FXML Button newSessionButton, addUserButton, finishedButton, initialRound, beerButton, cocktailButton, shotButton, newRound, exit;
-    @FXML TextField sessionName, addUser;
+    @FXML Button newSessionButton, addUserButton, finishedButton, initialRound, beerButton, cocktailButton, shotButton, newRound, exit, other;
+    @FXML TextField sessionName, addUser, otherPrice;
     @FXML Label finishedLabel, buyerLabel, Leaderboard;
 
     // BackgroundImage backgroundImage = new BackgroundImage( new Image( getClass().getResource("trond.jpg").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
@@ -71,6 +71,7 @@ public class NesteRundeController {
         beerButton.setVisible(true);
         cocktailButton.setVisible(true);
         shotButton.setVisible(true);
+        other.setVisible(true);
         exit.setVisible(true);
         Leaderboard.setText("");
         String output = "";
@@ -136,6 +137,7 @@ public class NesteRundeController {
         beerButton.setVisible(true);
         cocktailButton.setVisible(true);
         shotButton.setVisible(true);
+        other.setVisible(true);
         updateLeaderBoard();
     }
 
@@ -153,6 +155,19 @@ public class NesteRundeController {
         //alert.setTitle("Ferdig for ikveld?");
         alert.setHeaderText("Ferdig for ikveld?");
         alert.setContentText("Trykk 'Lagre' for å avslutte og lagre til senere, eller 'Avslutt' uten å lagre");
+    }
+
+    public void handleOther() {
+        String price = otherPrice.getText();
+        Integer intPrice = Integer.parseInt(price);
+        session.nextUserBuyRound(intPrice);
+        beerButton.setVisible(false);
+        cocktailButton.setVisible(false);
+        shotButton.setVisible(false);
+        other.setVisible(false);
+        newRound.setVisible(true);
+        buyerLabel.setText("Kos dere med shoten!");
+        updateLeaderBoard();
     }
 
 }
