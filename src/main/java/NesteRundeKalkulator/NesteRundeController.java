@@ -13,11 +13,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -26,9 +28,11 @@ public class NesteRundeController {
 
     Session session;
     
-    @FXML Button newSessionButton, addUserButton, finishedButton, initialRound, beerButton, cocktailButton, shotButton, newRound, exit, other;
+    @FXML Button newSessionButton, addUserButton, finishedButton, initialRound, beerButton, cocktailButton, shotButton, newRound, exit, other, saveButton;
     @FXML TextField sessionName, addUser, otherPrice;
     @FXML Label finishedLabel, buyerLabel, Leaderboard;
+    @FXML Pane exitPane;
+    @FXML AnchorPane background;
 
     // BackgroundImage backgroundImage = new BackgroundImage( new Image( getClass().getResource("trond.jpg").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
     // Background background = new Background(backgroundImage);
@@ -175,10 +179,9 @@ public class NesteRundeController {
     }
 
     public void handleExit() {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        //alert.setTitle("Ferdig for ikveld?");
-        alert.setHeaderText("Ferdig for ikveld?");
-        alert.setContentText("Trykk 'Lagre' for å avslutte og lagre til senere, eller 'Avslutt' uten å lagre");
+        exitPane.setVisible(true);
+        saveButton.setVisible(true);
+        background.setVisible(false);
     }
 
     public void handleOther() {
@@ -196,4 +199,8 @@ public class NesteRundeController {
         updateLeaderBoard();
     }
 
+
+    public void handleSave() {
+
+    }
 }
