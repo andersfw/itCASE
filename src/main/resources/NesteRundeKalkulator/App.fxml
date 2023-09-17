@@ -37,5 +37,7 @@
          </font>
       </Label>
       <Button fx:id="exit" layoutX="483.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleExit" prefHeight="48.0" prefWidth="94.0" text="På tide å dra hjem?" textAlignment="CENTER" visible="false" wrapText="true" />
+      <Button fx:id="other" layoutX="510.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleOther" text="Annet" visible="false" />
+      <TextField fx:id="otherPrice" layoutX="507.0" layoutY="144.0" prefHeight="26.0" prefWidth="79.0" promptText="Pris" visible="false" />
    </children>
 </AnchorPane>
