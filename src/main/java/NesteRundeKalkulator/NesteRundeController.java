@@ -71,6 +71,7 @@ public class NesteRundeController {
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
         newRound.setVisible(true);
+        buyerLabel.setText("Kos dere med ølen!");
         //Skrive til fil
     }
 
@@ -80,6 +81,8 @@ public class NesteRundeController {
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
         newRound.setVisible(true);
+        buyerLabel.setText("Kos dere med drinken!");
+
         //Skrive til fil
     }
 
@@ -89,6 +92,8 @@ public class NesteRundeController {
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
         newRound.setVisible(true);
+        buyerLabel.setText("Kos dere med shoten!");
+
         //Sktive til fil
     }
 
