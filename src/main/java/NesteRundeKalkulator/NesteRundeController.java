@@ -179,9 +179,8 @@ public class NesteRundeController {
     }
 
     public void handleExit() {
-        exitPane.setVisible(true);
-        saveButton.setVisible(true);
-        background.setVisible(false);
+        Stage stage = (Stage) exit.getScene().getWindow();
+        stage.close();
     }
 
     public void handleOther() {
