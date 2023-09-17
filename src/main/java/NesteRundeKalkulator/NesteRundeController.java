@@ -72,6 +72,7 @@ public class NesteRundeController {
         cocktailButton.setVisible(true);
         shotButton.setVisible(true);
         other.setVisible(true);
+        otherPrice.setVisible(true);
         exit.setVisible(true);
         Leaderboard.setText("");
         String output = "";
@@ -87,6 +88,8 @@ public class NesteRundeController {
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
         newRound.setVisible(true);
+        other.setVisible(false);
+        otherPrice.setVisible(false);
         buyerLabel.setText("Kos dere med ølen!");
         updateLeaderBoard();
         //Skrive til fil
@@ -98,6 +101,8 @@ public class NesteRundeController {
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
         newRound.setVisible(true);
+        other.setVisible(false);
+        otherPrice.setVisible(false);
         buyerLabel.setText("Kos dere med drinken!");
         updateLeaderBoard();
 
@@ -110,6 +115,8 @@ public class NesteRundeController {
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
         newRound.setVisible(true);
+        other.setVisible(false);
+        otherPrice.setVisible(false);
         buyerLabel.setText("Kos dere med shoten!");
         updateLeaderBoard();
 
@@ -138,6 +145,7 @@ public class NesteRundeController {
         cocktailButton.setVisible(true);
         shotButton.setVisible(true);
         other.setVisible(true);
+        otherPrice.setVisible(true);
         updateLeaderBoard();
     }
 
@@ -165,8 +173,9 @@ public class NesteRundeController {
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
         other.setVisible(false);
+        otherPrice.setVisible(false);
         newRound.setVisible(true);
-        buyerLabel.setText("Kos dere med shoten!");
+        buyerLabel.setText("Kos dere med drikken!");
         updateLeaderBoard();
     }
 
