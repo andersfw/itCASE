@@ -8,6 +8,7 @@ public class Session {
     private List<User> users = new ArrayList<User>();
     private List<Beverage> beverages = new ArrayList<Beverage>();
     private String name;
+    private User buyingUser;
 
     public Session(String name) {
         checkSessionName(name);
@@ -20,6 +21,14 @@ public class Session {
     
     public String getName() {
         return name;
+    }
+
+    public void setBuyingUser(User user) {
+        this.buyingUser = user;
+    }
+
+    public User getBuyingUser() {
+        return this.buyingUser;
     }
 
     public void setName(String name) {

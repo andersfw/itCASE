@@ -56,6 +56,7 @@ public class NesteRundeController {
 
     public void handleInitialRound() {
         User user = session.getRandomUser();
+        session.setBuyingUser(user);
         initialRound.setVisible(false);
         buyerLabel.setVisible(true);
         buyerLabel.setText(user.getName()+" kjøper første runde!");
@@ -65,15 +66,18 @@ public class NesteRundeController {
     }
 
     public void handleBeerBuy(){
-
+        session.getBuyingUser().setBalance(1);
+        //Skrive til fil
     }
 
     public void handleCocktailBuy(){
-
+        session.getBuyingUser().setBalance(2);
+        //Skrive til fil
     }
 
     public void handleShotBuy(){
-
+        session.getBuyingUser().setBalance(2);
+        //Sktive til fil
     }
 
 
