@@ -40,10 +40,5 @@
       <Button fx:id="exit" layoutX="483.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleExit" prefHeight="48.0" prefWidth="94.0" text="På tide å dra hjem?" textAlignment="CENTER" visible="false" wrapText="true" />
       <Button fx:id="other" layoutX="510.0" layoutY="135.0" mnemonicParsing="false" onAction="#handleOther" text="Annet" visible="false" />
       <TextField fx:id="otherPrice" layoutX="505.0" layoutY="166.0" prefHeight="26.0" prefWidth="79.0" promptText="Pris" visible="false" />
-      <Pane fx:id="exitPane" layoutX="199.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" visible="false">
-         <children>
-            <Button fx:id="saveButton" layoutX="74.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleSave" text="Button" />
-         </children>
-      </Pane>
    </children>
 </AnchorPane>
