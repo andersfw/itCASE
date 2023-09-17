@@ -53,7 +53,15 @@ public class Session {
         user.setBalance(drinks*amount);
     }
 
-    public String suggestNextUser() {
+    public void nextUserBuyRound(Beverage beverage) {
+        User userToBuyRound = suggestNextUser();
+        int amount = beverage.getPrice();
+        int drinks = users.size();
+        userToBuyRound.setBalance(drinks*amount);
+    }
+
+
+    public User suggestNextUser() {
         User nextUser = users.get(0);
         for (User prevUser : users) {
             if (prevUser.getBalance() < nextUser.getBalance()) {
@@ -71,35 +79,9 @@ public class Session {
             }
         }
         
-        return nextUser.getName()+" må kjøpe runde, vedkommende har kun brukt " + nextUser.getBalance() + " kr i kveld.";
+        System.out.println(nextUser.getName()+" må kjøpe runde, vedkommende har kun brukt " + nextUser.getBalance() + " kr i kveld.");
+
+        return nextUser;
     }
 
-    public static void main (String[] args) {
-        Session session = new Session("Bankett");
-        User eskil = new User("Eskil");
-        session.addUser(eskil);
-
-        User anders = new User("Anders");
-        session.addUser(anders);
-        User hakon = new User("Hakon");
-        session.addUser(hakon);
-        User trond = new User("Trond");
-        session.addUser(trond);
-        Beverage beer = new Beverage("beer", 50);
-        Beverage cocktail = new Beverage("cocktail", 60);
-        Beverage shot = new Beverage("shot", 100);
-        session.beverages.add(beer);
-        session.beverages.add(cocktail);
-        session.beverages.add(shot);
-        session.buyRound(hakon, shot);
-        System.out.println(session.getUsers());
-        System.out.println(session.suggestNextUser());
-        session.buyRound(eskil, beer);
-        System.out.println(session.suggestNextUser());
-        session.buyRound(anders, cocktail);
-        System.out.println(session.suggestNextUser());
-        session.buyRound(trond, shot);
-        System.out.println(session.suggestNextUser());
-        System.out.println(session.getUsers());
-    }
 }
