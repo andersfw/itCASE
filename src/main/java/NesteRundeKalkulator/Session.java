@@ -80,7 +80,7 @@ public class Session {
     }
 
     public void nextUserBuyRound(int price) {
-        User userToBuyRound = suggestNextUser();
+        User userToBuyRound = buyingUser;
         int drinks = users.size();
         userToBuyRound.setBalance(drinks*price);
     }
@@ -100,12 +100,14 @@ public class Session {
         }
         for (User user : lowestUsers) {
             if (user.getName().toLowerCase().equals("trond")) {
+                buyingUser = user;
                 return user;
             }
         }
         Random random = new Random();
         int randomIndex = random.nextInt(lowestUsers.size());
-        return lowestUsers.get(randomIndex);
+        buyingUser = lowestUsers.get(randomIndex);
+        return buyingUser;
     }
 
 }
