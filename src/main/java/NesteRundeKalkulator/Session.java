@@ -79,11 +79,10 @@ public class Session {
         user.setBalance(drinks*amount);
     }
 
-    public void nextUserBuyRound(Beverage beverage) {
+    public void nextUserBuyRound(int price) {
         User userToBuyRound = suggestNextUser();
-        int amount = beverage.getPrice();
         int drinks = users.size();
-        userToBuyRound.setBalance(drinks*amount);
+        userToBuyRound.setBalance(drinks*price);
     }
 
     public User suggestNextUser() {
