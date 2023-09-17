@@ -28,7 +28,7 @@ public class NesteRundeController {
 
     Session session;
     
-    @FXML Button newSessionButton, addUserButton, finishedButton, initialRound, beerButton, cocktailButton, shotButton, newRound, exit, other, saveButton;
+    @FXML Button newSessionButton, addUserButton, finishedButton, initialRound, beerButton, cocktailButton, shotButton, newRound, exit, other;
     @FXML TextField sessionName, addUser, otherPrice;
     @FXML Label finishedLabel, buyerLabel, Leaderboard;
     @FXML Pane exitPane;
@@ -186,7 +186,6 @@ public class NesteRundeController {
     public void handleOther() {
         try {
             if (otherPrice.getText().equals("")) {
-                System.out.println("TOOOOOOOOOOOM: "+otherPrice.getText());
                 throw new IllegalArgumentException("Ulovlig input");
             }
             int drinkPrice = Integer.parseInt(otherPrice.getText());
@@ -212,9 +211,5 @@ public class NesteRundeController {
         newRound.setVisible(true);
         buyerLabel.setText("Kos dere med drikken!");
         updateLeaderBoard();
-    }
-
-    public void handleSave() {
-
     }
 }
