@@ -103,10 +103,11 @@ public class Session {
             if (user.getName().toLowerCase().equals("trond")) {
                 return user;
             }
-        }
-        
 
-        return lowestUser;
+        Random random = new Random();
+        int randomIndex = random.nextInt(lowestUsers.size());
+        return lowestUsers.get(randomIndex);
+        }
     }
 
 }
