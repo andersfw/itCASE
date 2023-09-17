@@ -185,9 +185,25 @@ public class NesteRundeController {
     }
 
     public void handleOther() {
-        String price = otherPrice.getText();
-        Integer intPrice = Integer.parseInt(price);
-        session.nextUserBuyRound(intPrice);
+        try {
+            if (otherPrice.getText().equals("")) {
+                System.out.println("TOOOOOOOOOOOM: "+otherPrice.getText());
+                throw new IllegalArgumentException("Ulovlig input");
+            }
+            int drinkPrice = Integer.parseInt(otherPrice.getText());
+            if (drinkPrice<=0 || drinkPrice>1000) {
+                throw new IllegalArgumentException("Ulovlig input");
+            }
+        } 
+        catch (IllegalArgumentException e) {
+            Alert alert=new Alert(AlertType.ERROR);
+            alert.setTitle("Feilmelding");
+            alert.setHeaderText(e.getLocalizedMessage());
+            alert.showAndWait();
+        }
+        int drinkPrice = Integer.parseInt(otherPrice.getText());
+        session.nextUserBuyRound(drinkPrice);
+
         beerButton.setVisible(false);
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
@@ -198,7 +214,6 @@ public class NesteRundeController {
         buyerLabel.setText("Kos dere med drikken!");
         updateLeaderBoard();
     }
-
 
     public void handleSave() {
 
