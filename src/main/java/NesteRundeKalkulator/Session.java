@@ -87,26 +87,26 @@ public class Session {
     }
 
     public User suggestNextUser() {
-        User nextUser = users.get(0);
-        for (User prevUser : users) {
-            if (prevUser.getBalance() < nextUser.getBalance()) {
-                nextUser = prevUser;
+        User lowestUser = users.get(0);
+        for (User user : users) {
+            if (user.getBalance() < lowestUser.getBalance()) {
+                lowestUser = user;
             }
-            if (prevUser.getBalance() == nextUser.getBalance()) {
-                List<User> sameBalance = new ArrayList<User>();
-                Random random = new Random();
-                sameBalance.add(prevUser);
-                sameBalance.add(nextUser);
-                nextUser = sameBalance.get(random.nextInt(sameBalance.size()));
-                if (prevUser.getName().toLowerCase().equals("trond")) {
-                    nextUser = prevUser;
-                }
+        }
+        List<User> lowestUsers = new ArrayList<User>();
+        for (User user : users) {
+            if (user.getBalance() == lowestUser.getBalance()) {
+                lowestUsers.add(user);
+            }
+        }
+        for (User user : lowestUsers) {
+            if (user.getName().toLowerCase().equals("trond")) {
+                return user;
             }
         }
         
-        System.out.println(nextUser.getName()+" må kjøpe runde, vedkommende har kun brukt " + nextUser.getBalance() + " kr i kveld.");
 
-        return nextUser;
+        return lowestUser;
     }
 
 }
