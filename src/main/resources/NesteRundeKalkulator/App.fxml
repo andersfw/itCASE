@@ -36,5 +36,6 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Button layoutX="483.0" layoutY="330.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="94.0" text="På tide å dra hjem?" textAlignment="CENTER" wrapText="true" />
    </children>
 </AnchorPane>

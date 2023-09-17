@@ -10,8 +10,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -24,7 +30,8 @@ public class NesteRundeController {
     @FXML TextField sessionName, addUser;
     @FXML Label finishedLabel, buyerLabel, Leaderboard;
 
-
+    // BackgroundImage backgroundImage = new BackgroundImage( new Image( getClass().getResource("trond.jpg").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+    // Background background = new Background(backgroundImage);
 
     public void handleNewSession() {
         String name = sessionName.getText();
@@ -52,6 +59,7 @@ public class NesteRundeController {
         finishedButton.setVisible(false);
         finishedLabel.setVisible(false);
         initialRound.setVisible(true);
+        // initialRound.setBackground(background);
     }
 
     public void handleInitialRound() {
