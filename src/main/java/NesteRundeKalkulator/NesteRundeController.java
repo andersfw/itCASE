@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Region;
 import javafx.scene.text.Text;
@@ -19,8 +20,9 @@ public class NesteRundeController {
 
     Session session;
     
-    @FXML Button newSessionButton;
-    @FXML TextField sessionName;
+    @FXML Button newSessionButton, addUserButton, finishedButton;
+    @FXML TextField sessionName, addUser;
+    @FXML Label finishedLabel;
 
 
 
@@ -30,5 +32,22 @@ public class NesteRundeController {
 
         newSessionButton.setVisible(false);
         sessionName.setVisible(false);
+        addUserButton.setVisible(true);
+        addUser.setVisible(true);
+        finishedButton.setVisible(true);
+        finishedLabel.setVisible(true);
     }
+
+
+    public void handleAddUser() {
+        String name = addUser.getText();
+        User user = new User(name);
+        session.addUser(user);
+    }
+
+    public void handleFinished() {
+        
+    }
+
+
 }

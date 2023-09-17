@@ -42,7 +42,7 @@ public class Session {
     }
 
     private void checkSessionName(String name) {
-        if (name.contains("")) {
+        if (name.equals("")) {
             throw new IllegalArgumentException("Ugyldig navn");
         }
     }
