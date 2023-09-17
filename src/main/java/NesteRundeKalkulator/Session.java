@@ -7,8 +7,7 @@ public class Session {
     private List<User> users = new ArrayList<User>();
     private String name;
 
-    public Session(List<User> users, String name) {
-        this.users = users;
+    public Session(String name) {
         this.name = name;
     }
 
@@ -21,8 +20,12 @@ public class Session {
     }
 
     public void setName(String name) {
-        checkName(name);
-        this.name = name;
+        this.name = name; //sjekk opp mot database
+    }
+
+    public void addUser(User user) {
+        checkName(user.getName());
+        users.add(user);
     }
 
     private void checkName(String name) {
