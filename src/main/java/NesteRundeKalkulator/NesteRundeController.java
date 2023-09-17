@@ -192,15 +192,14 @@ public class NesteRundeController {
             if (drinkPrice<=0 || drinkPrice>1000) {
                 throw new IllegalArgumentException("Ulovlig input");
             }
+            session.nextUserBuyRound(drinkPrice);
         } 
-        catch (IllegalArgumentException e) {
+        catch (Exception e) {
             Alert alert=new Alert(AlertType.ERROR);
             alert.setTitle("Feilmelding");
             alert.setHeaderText(e.getLocalizedMessage());
             alert.showAndWait();
         }
-        int drinkPrice = Integer.parseInt(otherPrice.getText());
-        session.nextUserBuyRound(drinkPrice);
 
         beerButton.setVisible(false);
         cocktailButton.setVisible(false);
