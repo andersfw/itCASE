@@ -75,13 +75,13 @@ public class NesteRundeController {
         Leaderboard.setText("");
         String output = "";
         for (User user2 : session.getUsers()) {
-            output += user2.getName()+ " har spandert " + user2.getBalance() +" ganger \n";
+            output += user2.getName()+ " har spandert drikke på " + user2.getBalance() +" kr \n";
         }
         Leaderboard.setText(output);
     }
 
     public void handleBeerBuy(){
-        session.getBuyingUser().setBalance(1);
+        session.nextUserBuyRound(75);
         beerButton.setVisible(false);
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
@@ -92,7 +92,7 @@ public class NesteRundeController {
     }
 
     public void handleCocktailBuy(){
-        session.getBuyingUser().setBalance(2);
+        session.nextUserBuyRound(100);
         beerButton.setVisible(false);
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
@@ -104,7 +104,7 @@ public class NesteRundeController {
     }
 
     public void handleShotBuy(){
-        session.getBuyingUser().setBalance(2);
+        session.nextUserBuyRound(80);
         beerButton.setVisible(false);
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
@@ -114,6 +114,18 @@ public class NesteRundeController {
 
         //Sktive til fil
     }
+
+    // public void handleDrinkBuy(){
+    //     session.nextUserBuyRound(Integer.parseInt(drinkCost.getText()));
+    //     beerButton.setVisible(false);
+    //     cocktailButton.setVisible(false);
+    //     shotButton.setVisible(false);
+    //     newRound.setVisible(true);
+    //     buyerLabel.setText("Kos dere med shoten!");
+    //     updateLeaderBoard();
+
+    //     //Sktive til fil
+    // }
 
     public void handleNewRound() {
         User nextBuyer = session.suggestNextUser();
