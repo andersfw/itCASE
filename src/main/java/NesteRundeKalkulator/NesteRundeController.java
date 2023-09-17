@@ -22,7 +22,7 @@ public class NesteRundeController {
     
     @FXML Button newSessionButton, addUserButton, finishedButton, initialRound, beerButton, cocktailButton, shotButton, newRound;
     @FXML TextField sessionName, addUser;
-    @FXML Label finishedLabel, buyerLabel;
+    @FXML Label finishedLabel, buyerLabel, Leaderboard;
 
 
 
@@ -63,6 +63,12 @@ public class NesteRundeController {
         beerButton.setVisible(true);
         cocktailButton.setVisible(true);
         shotButton.setVisible(true);
+        Leaderboard.setText("");
+        String output = "";
+        for (User user2 : session.getUsers()) {
+            output += user2.getName()+ " har spandert " + user2.getBalance() +" ganger \n";
+        }
+        Leaderboard.setText(output);
     }
 
     public void handleBeerBuy(){
@@ -101,10 +107,14 @@ public class NesteRundeController {
         User nextBuyer = session.suggestNextUser();
         newRound.setVisible(false);
         buyerLabel.setVisible(true);
-        buyerLabel.setText(nextBuyer.getName());
+        buyerLabel.setText(nextBuyer.getName() + " kjøper neste runde!");
         beerButton.setVisible(true);
         cocktailButton.setVisible(true);
         shotButton.setVisible(true);
+    }
+
+    public void updateLeaderBoard() {
+
     }
 
 
