@@ -123,17 +123,17 @@ public class NesteRundeController {
         //Sktive til fil
     }
 
-    // public void handleDrinkBuy(){
-    //     session.nextUserBuyRound(Integer.parseInt(drinkCost.getText()));
-    //     beerButton.setVisible(false);
-    //     cocktailButton.setVisible(false);
-    //     shotButton.setVisible(false);
-    //     newRound.setVisible(true);
-    //     buyerLabel.setText("Kos dere med shoten!");
-    //     updateLeaderBoard();
+    public void handleOtherDrinkBuy(){
+        session.nextUserBuyRound(Integer.parseInt(otherPrice.getText()));
+        beerButton.setVisible(false);
+        cocktailButton.setVisible(false);
+        shotButton.setVisible(false);
+        newRound.setVisible(true);
+        buyerLabel.setText("Kos dere med shoten!");
+        updateLeaderBoard();
 
-    //     //Sktive til fil
-    // }
+        //Sktive til fil
+    }
 
     public void handleNewRound() {
         User nextBuyer = session.suggestNextUser();
@@ -173,6 +173,7 @@ public class NesteRundeController {
         cocktailButton.setVisible(false);
         shotButton.setVisible(false);
         other.setVisible(false);
+        otherPrice.clear();
         otherPrice.setVisible(false);
         newRound.setVisible(true);
         buyerLabel.setText("Kos dere med drikken!");
