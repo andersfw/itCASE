@@ -143,7 +143,7 @@ public class NesteRundeController {
         Leaderboard.setText("");
         String output = "";
         for (User user2 : session.getUsers()) {
-            output += user2.getName()+ " har spandert " + user2.getBalance() +" ganger \n";
+            output += user2.getName()+ " har spandert drikke på " + user2.getBalance() +" kr \n";
         }
         Leaderboard.setText(output);
     }
