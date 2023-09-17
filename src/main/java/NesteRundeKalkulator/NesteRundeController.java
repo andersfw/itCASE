@@ -62,7 +62,6 @@ public class NesteRundeController {
         beerButton.setVisible(true);
         coctailButton.setVisible(true);
         shotButton.setVisible(true);
-
     }
 
 
