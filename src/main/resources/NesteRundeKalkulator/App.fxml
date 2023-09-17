@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NesteRundeKalkulator.NesteRundeKontroller">
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NesteRundeKalkulator.NesteRundeController">
    <children>
       <Button fx:id="newSessionButton" layoutX="278.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleNewSession" text="Enter" textAlignment="CENTER" />
       <TextField fx:id="sessionName" alignment="CENTER" layoutX="225.0" layoutY="75.0" promptText="SessionName" />
