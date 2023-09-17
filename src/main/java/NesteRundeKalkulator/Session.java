@@ -104,9 +104,9 @@ public class Session {
                 return user;
             }
         }
-        
-
-        return lowestUser;
+        Random random = new Random();
+        int randomIndex = random.nextInt(lowestUsers.size());
+        return lowestUsers.get(randomIndex);
     }
 
 }
