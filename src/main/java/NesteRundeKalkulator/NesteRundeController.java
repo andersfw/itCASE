@@ -26,7 +26,7 @@ public class NesteRundeController {
 
     Session session;
     
-    @FXML Button newSessionButton, addUserButton, finishedButton, initialRound, beerButton, cocktailButton, shotButton, newRound;
+    @FXML Button newSessionButton, addUserButton, finishedButton, initialRound, beerButton, cocktailButton, shotButton, newRound, exit;
     @FXML TextField sessionName, addUser;
     @FXML Label finishedLabel, buyerLabel, Leaderboard;
 
@@ -71,6 +71,7 @@ public class NesteRundeController {
         beerButton.setVisible(true);
         cocktailButton.setVisible(true);
         shotButton.setVisible(true);
+        exit.setVisible(true);
         Leaderboard.setText("");
         String output = "";
         for (User user2 : session.getUsers()) {
@@ -135,5 +136,11 @@ public class NesteRundeController {
         Leaderboard.setText(output);
     }
 
+    public void handleExit() {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        //alert.setTitle("Ferdig for ikveld?");
+        alert.setHeaderText("Ferdig for ikveld?");
+        alert.setContentText("Trykk 'Lagre' for å avslutte og lagre til senere, eller 'Avslutt' uten å lagre");
+    }
 
 }
