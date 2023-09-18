@@ -52,5 +52,10 @@
             <Image url="@trond.jpg" />
          </image>
       </ImageView>
+      <Label fx:id="sessionLabel" alignment="CENTER" layoutX="199.0" layoutY="176.0" prefHeight="48.0" prefWidth="203.0" textAlignment="CENTER" visible="false">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

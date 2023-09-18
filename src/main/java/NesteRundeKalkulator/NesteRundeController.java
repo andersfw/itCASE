@@ -30,7 +30,7 @@ public class NesteRundeController {
     
     @FXML Button newSessionButton, addUserButton, finishedButton, initialRound, beerButton, cocktailButton, shotButton, newRound, exit, other;
     @FXML TextField sessionName, addUser, otherPrice;
-    @FXML Label finishedLabel, buyerLabel, Leaderboard, priceTitle, priceList;
+    @FXML Label finishedLabel, buyerLabel, Leaderboard, priceTitle, priceList, sessionLabel;
     @FXML Pane exitPane;
     @FXML AnchorPane background;
     @FXML ImageView trond;
@@ -49,6 +49,8 @@ public class NesteRundeController {
         finishedButton.setVisible(true);
         finishedLabel.setVisible(true);
         buyerLabel.setText("");
+        sessionLabel.setText(name);
+        sessionLabel.setVisible(true);
     }
 
 
@@ -75,6 +77,7 @@ public class NesteRundeController {
         finishedButton.setVisible(false);
         finishedLabel.setVisible(false);
         initialRound.setVisible(true);
+        sessionLabel.setVisible(false);
         // initialRound.setBackground(background);
     }
 
