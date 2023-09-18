@@ -55,17 +55,16 @@ public class NesteRundeController {
             if (addUser.getText().equals("")) {
                 throw new IllegalArgumentException("Ulovlig bruker");
             }
+            String name = addUser.getText();
+            User user = new User(name);
+            session.addUser(user);
+            addUser.clear();
         } catch (Exception e) {
             Alert alert=new Alert(AlertType.ERROR);
             alert.setTitle("Feilmelding");
             alert.setHeaderText(e.getLocalizedMessage());
             alert.showAndWait();
         }
-        
-        String name = addUser.getText();
-        User user = new User(name);
-        session.addUser(user);
-        addUser.clear();
     }
 
     public void handleFinished() {
