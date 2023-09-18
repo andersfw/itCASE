@@ -51,6 +51,17 @@ public class NesteRundeController {
 
 
     public void handleAddUser() {
+        try {
+            if (addUser.getText().equals("")) {
+                throw new IllegalArgumentException("Ulovlig bruker");
+            }
+        } catch (Exception e) {
+            Alert alert=new Alert(AlertType.ERROR);
+            alert.setTitle("Feilmelding");
+            alert.setHeaderText(e.getLocalizedMessage());
+            alert.showAndWait();
+        }
+        
         String name = addUser.getText();
         User user = new User(name);
         session.addUser(user);
