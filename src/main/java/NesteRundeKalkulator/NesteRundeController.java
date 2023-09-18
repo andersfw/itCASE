@@ -48,6 +48,7 @@ public class NesteRundeController {
         addUser.setVisible(true);
         finishedButton.setVisible(true);
         finishedLabel.setVisible(true);
+        buyerLabel.setText("");
     }
 
 
@@ -79,11 +80,13 @@ public class NesteRundeController {
 
     public void handleInitialRound() {
         User user = session.getRandomUser();
+        if (user.getName().toLowerCase().equals("trond")) {
+            trond.setVisible(true);
+        }
         session.setBuyingUser(user);
         initialRound.setVisible(false);
         buyerLabel.setVisible(true);
         buyerLabel.setText(user.getName()+" kjøper første runde!");
-        trond.setVisible(true);
         priceList.setVisible(true);
         priceTitle.setVisible(true);
         beerButton.setVisible(true);
@@ -108,6 +111,7 @@ public class NesteRundeController {
         newRound.setVisible(true);
         other.setVisible(false);
         otherPrice.setVisible(false);
+        trond.setVisible(false);
         buyerLabel.setText("Kos dere med ølen!");
         updateLeaderBoard();
         //Skrive til fil
@@ -121,6 +125,7 @@ public class NesteRundeController {
         newRound.setVisible(true);
         other.setVisible(false);
         otherPrice.setVisible(false);
+        trond.setVisible(false);
         buyerLabel.setText("Kos dere med drinken!");
         updateLeaderBoard();
 
@@ -135,6 +140,7 @@ public class NesteRundeController {
         newRound.setVisible(true);
         other.setVisible(false);
         otherPrice.setVisible(false);
+        trond.setVisible(false);
         buyerLabel.setText("Kos dere med shoten!");
         updateLeaderBoard();
 
@@ -171,6 +177,9 @@ public class NesteRundeController {
 
     public void handleNewRound() {
         User nextBuyer = session.suggestNextUser();
+        if (nextBuyer.getName().toLowerCase().equals("trond")) {
+            trond.setVisible(true);
+        }
         session.setBuyingUser(nextBuyer);
         newRound.setVisible(false);
         buyerLabel.setVisible(true);
@@ -222,6 +231,7 @@ public class NesteRundeController {
         otherPrice.clear();
         otherPrice.setVisible(false);
         newRound.setVisible(true);
+        trond.setVisible(false);
         buyerLabel.setText("Kos dere med drikken!");
         updateLeaderBoard();
     }
