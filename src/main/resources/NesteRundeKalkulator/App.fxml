@@ -3,12 +3,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: EACDC2;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NesteRundeKalkulator.NesteRundeController">
    <children>
-      <Button fx:id="newSessionButton" layoutX="278.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleNewSession" style="-fx-background-color: 223843;" text="Enter" textAlignment="CENTER" />
+      <Button fx:id="newSessionButton" layoutX="278.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleNewSession" text="Enter" textAlignment="CENTER" />
       <TextField fx:id="sessionName" alignment="CENTER" layoutX="226.0" layoutY="75.0" promptText="Anledning" />
       <TextField fx:id="addUser" alignment="CENTER" layoutX="226.0" layoutY="245.0" promptText="Legg til venner" visible="false" />
       <Button fx:id="addUserButton" layoutX="273.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleAddUser" text="Legg til" visible="false" />
@@ -45,5 +47,10 @@
          </font>
       </Label>
       <Label fx:id="priceList" layoutX="28.0" layoutY="104.0" prefHeight="74.0" prefWidth="70.0" text="ØL: 75kr DRINK: 100kr SHOT: 80kr" visible="false" wrapText="true" />
+      <ImageView fx:id="trond" fitHeight="156.0" fitWidth="143.0" layoutX="267.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@trond.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

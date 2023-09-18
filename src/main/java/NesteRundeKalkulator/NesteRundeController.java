@@ -10,7 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
@@ -33,6 +33,7 @@ public class NesteRundeController {
     @FXML Label finishedLabel, buyerLabel, Leaderboard, priceTitle, priceList;
     @FXML Pane exitPane;
     @FXML AnchorPane background;
+    @FXML ImageView trond;
 
     // BackgroundImage backgroundImage = new BackgroundImage( new Image( getClass().getResource("trond.jpg").toExternalForm()), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
     // Background background = new Background(backgroundImage);
@@ -82,6 +83,7 @@ public class NesteRundeController {
         initialRound.setVisible(false);
         buyerLabel.setVisible(true);
         buyerLabel.setText(user.getName()+" kjøper første runde!");
+        trond.setVisible(true);
         priceList.setVisible(true);
         priceTitle.setVisible(true);
         beerButton.setVisible(true);
