@@ -30,7 +30,7 @@ public class NesteRundeController {
     
     @FXML Button newSessionButton, addUserButton, finishedButton, initialRound, beerButton, cocktailButton, shotButton, newRound, exit, other;
     @FXML TextField sessionName, addUser, otherPrice;
-    @FXML Label finishedLabel, buyerLabel, Leaderboard;
+    @FXML Label finishedLabel, buyerLabel, Leaderboard, priceTitle, priceList;
     @FXML Pane exitPane;
     @FXML AnchorPane background;
 
@@ -82,6 +82,8 @@ public class NesteRundeController {
         initialRound.setVisible(false);
         buyerLabel.setVisible(true);
         buyerLabel.setText(user.getName()+" kjøper første runde!");
+        priceList.setVisible(true);
+        priceTitle.setVisible(true);
         beerButton.setVisible(true);
         cocktailButton.setVisible(true);
         shotButton.setVisible(true);
