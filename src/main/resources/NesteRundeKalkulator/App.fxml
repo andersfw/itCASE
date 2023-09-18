@@ -46,7 +46,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="priceList" layoutX="28.0" layoutY="104.0" prefHeight="74.0" prefWidth="70.0" text="ØL: 75kr DRINK: 100kr SHOT: 80kr" visible="false" wrapText="true" />
+      <Label fx:id="priceList" layoutX="28.0" layoutY="104.0" prefHeight="74.0" prefWidth="79.0" text="ØL: 75kr DRINK: 100kr SHOT: 80kr" visible="false" wrapText="true" />
       <ImageView fx:id="trond" fitHeight="156.0" fitWidth="143.0" layoutX="267.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@trond.jpg" />
