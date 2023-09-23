@@ -1,2 +1,3 @@
 # itCASE
-Neste_Runde_Kalkulator
+
+Applikasjon laget under itCASE på itDAGENE 2023. 
